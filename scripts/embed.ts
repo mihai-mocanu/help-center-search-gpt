@@ -18,6 +18,7 @@ const generateEmbeddings = async (posts: WBWPost[]) => {
     const section = posts[i];
 
     for (let j = 0; j < section.chunks.length; j++) {
+      // await delay(1000);
       const chunk = section.chunks[j];
 
       const { post_title, post_url, post_date, post_type, content, content_length, content_tokens } = chunk;
@@ -55,10 +56,14 @@ const generateEmbeddings = async (posts: WBWPost[]) => {
 
       chunkNum++;
 
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
     }
   }
 };
+
+function delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
 (async () => {
   const book: WBWJSON = JSON.parse(fs.readFileSync("scripts/wbw.json", "utf8"));

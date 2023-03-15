@@ -32,9 +32,9 @@ const getLinks = async (page: string, className: string) => {
     }
   });
 
-  // const filteredLinks = [...new Set(links.filter((link) => link.endsWith(".html")))];
+  const filteredLinks = [...new Set(links.filter((link) => link.startsWith("https://helpcenter.paddypower.com/app/answers/detail/p/6/a_id")))];
 
-  return links;
+  return filteredLinks;
 };
 
 const getPost = async (url: string, type: "post" | "mini") => {
