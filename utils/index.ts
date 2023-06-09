@@ -19,15 +19,15 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
       messages: [
         {
           role: "system",
-          content: "You are a helpful assistant that accurately answers queries using Wait But Why posts. Use the text provided to form your answer, but avoid copying word-for-word from the posts. Try to use your own words when possible. Keep your answer under 5 sentences. Be accurate, helpful, concise, and clear."
+          content: "You are a helpful assistant that accurately answers customer queries related to their Paddy Power experience. Use the text provided to form your answer, but rephrase for concision and clarity and keep your answer under 5 sentences. Be accurate, helpful, concise, and clear."
         },
         {
           role: "user",
           content: prompt
         }
       ],
-      max_tokens: 150,
-      temperature: 0.0,
+      max_tokens: 256,
+      temperature: 0.2,
       stream: true
     })
   });

@@ -92,7 +92,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 npm run scrape
 ```
 
-This scrapes all of the posts from the Wait But Why website and saves them to a json file.
+This scrapes part of the posts from the PP Helpcenter website and saves them to a json file.
 
 1. Run embedding script
 
