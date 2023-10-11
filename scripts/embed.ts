@@ -56,7 +56,7 @@ const generateEmbeddings = async (posts: WBWPost[]) => {
 
       chunkNum++;
 
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 20000));
     }
   }
 };

@@ -6,12 +6,12 @@ import { encode } from "gpt-3-encoder";
 
 const BASE_URL = "https://helpcenter.paddypower.com";
 
-const ARCHIVE_PAGE_1 = "/app/answers/list/p/6/c/1862";
+// const ARCHIVE_PAGE_1 = "/app/answers/list/p/6/c/1862";
 const ARCHIVE_PAGE_2 = "/app/answers/list/p/6/c/16";
 const ARCHIVE_CLASS = ".article-list";
 
-const MINIS_PAGE_1 = "/app/answers/list/p/6/c/1450";
-const MINIS_PAGE_2 = "/app/answers/list/p/6/c/1860";
+// const MINIS_PAGE_1 = "/app/answers/list/p/6/c/1450";
+// const MINIS_PAGE_2 = "/app/answers/list/p/6/c/1860";
 const MINIS_CLASS = ".article-list";
 
 const CHUNK_SIZE = 200;
@@ -147,9 +147,10 @@ const chunkPost = async (post: WBWPost) => {
 };
 
 (async () => {
-  const archivePage1Links = await getLinks(ARCHIVE_PAGE_1, ARCHIVE_CLASS);
+  // const archivePage1Links = await getLinks(ARCHIVE_PAGE_1, ARCHIVE_CLASS);
   const archivePage2Links = await getLinks(ARCHIVE_PAGE_2, ARCHIVE_CLASS);
-  const archiveLinks = [...archivePage1Links, ...archivePage2Links];
+  // const archiveLinks = [...archivePage1Links, ...archivePage2Links];
+  const archiveLinks = [...archivePage2Links];
 
   let posts = [];
 
@@ -161,17 +162,17 @@ const chunkPost = async (post: WBWPost) => {
     posts.push(chunkedPost);
   }
 
-  const minisPage1Links = await getLinks(MINIS_PAGE_1, MINIS_CLASS);
-  const minisPage2Links = await getLinks(MINIS_PAGE_2, MINIS_CLASS);
-  const minisLinks = [...minisPage1Links, ...minisPage2Links];
+  // const minisPage1Links = await getLinks(MINIS_PAGE_1, MINIS_CLASS);
+  // const minisPage2Links = await getLinks(MINIS_PAGE_2, MINIS_CLASS);
+  // const minisLinks = [...minisPage1Links, ...minisPage2Links];
 
-  for (let i = 0; i < minisLinks.length; i++) {
-    const link = minisLinks[i];
-    const post = await getPost(link, "mini");
-    const chunkedPost = await chunkPost(post);
-
-    posts.push(chunkedPost);
-  }
+  // for (let i = 0; i < minisLinks.length; i++) {
+  //   const link = minisLinks[i];
+  //   const post = await getPost(link, "mini");
+  //   const chunkedPost = await chunkPost(post);
+  //
+  //   posts.push(chunkedPost);
+  // }
 
   const todayDate = new Date().toISOString().split("T")[0];
 
