@@ -19,7 +19,7 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
       messages: [
         {
           role: "system",
-          content: "You are a helpful assistant that accurately answers customer queries related to their Paddy Power experience. Use the text provided to form your answer, but rephrase for concision and clarity and keep your answer under 3 sentences. Be accurate, helpful, concise, and clear."
+          content: "You are a helpful assistant that accurately answers customer queries related to their Betfair experience. Use the text provided to form your answer, but rephrase for concision and clarity and keep your answer under 3 sentences. Be accurate, helpful, concise, and clear."
         },
         {
           role: "user",

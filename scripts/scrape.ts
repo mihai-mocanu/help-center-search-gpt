@@ -4,10 +4,12 @@ import * as cheerio from "cheerio";
 import fs from "fs";
 import { encode } from "gpt-3-encoder";
 
-const BASE_URL = "https://helpcenter.paddypower.com";
+// const BASE_URL = "https://helpcenter.paddypower.com";
+const BASE_URL = "https://support.betfair.com";
 
+const ARCHIVE_PAGE_2 = "/app/answers/list/c/424";
 // const ARCHIVE_PAGE_1 = "/app/answers/list/p/6/c/1862";
-const ARCHIVE_PAGE_2 = "/app/answers/list/p/6/c/16";
+// const ARCHIVE_PAGE_2 = "/app/answers/list/p/6/c/16";
 const ARCHIVE_CLASS = ".article-list";
 
 // const MINIS_PAGE_1 = "/app/answers/list/p/6/c/1450";
@@ -32,7 +34,7 @@ const getLinks = async (page: string, className: string) => {
     }
   });
 
-  const filteredLinks = [...new Set(links.filter((link) => link.startsWith("https://helpcenter.paddypower.com/app/answers/detail/p/6/a_id")))];
+  const filteredLinks = [...new Set(links.filter((link) => link.startsWith(BASE_URL + "/app/answers/detail/a_id")))];
 
   return filteredLinks;
 };

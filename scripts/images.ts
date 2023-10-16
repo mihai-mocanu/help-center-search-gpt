@@ -2,9 +2,9 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 import fs from "fs";
 
-const BASE_URL = "https://helpcenter.paddypower.com";
+const BASE_URL = "https://support.betfair.com";
 
-const ARCHIVE_PAGE_1 = "/app/answers/list/p/6/c/1862";
+const ARCHIVE_PAGE_1 = "/app/answers/list/c/424";
 const ARCHIVE_PAGE_2 = "/app/answers/list/p/6/c/16";
 const ARCHIVE_CLASS = ".article-list";
 
